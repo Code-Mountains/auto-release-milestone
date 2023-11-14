@@ -1,6 +1,10 @@
 name: 'Auto Release Milestone'
 description: 'Drafts a GitHub release based on a nearly closed milestone'
 author: 'Code Mountain IT Solutions'
+inputs:
+  repo-token:
+    description: 'The CM_GITHUB_TOKEN used to authenticate'
+    required: true
 outputs:
   release-url:
     description: 'The URL of the GitHub release that was drafted'
