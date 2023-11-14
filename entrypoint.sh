@@ -21,18 +21,19 @@ if [ "$event_type" != "closed" ]; then
     exit 0
 fi
 
-milestone_name=$(jq --raw-input .milestone.title $GITHUB_EVENT_PATH)
+milestone_name=$(jq --raw-output '.milestone.title' $GITHUB_EVENT_PATH)
 
-IFS='/' read owner repository <<< "$GITHUB_REPOSITORY"
+IFS='/' read owner repository <<< "$GITHUB_REPOSITORY"  
 
 release_url=$(dotnet gitreleasemanager create \
---milestone $milestone_name \
---targetcommitish $GITHUB_SHA \
---token $repo_token \
---repository $repository)
+--milestone "$milestone_name" \
+--targetcommitish "$GITHUB_SHA" \
+--token "$repo_token" \
+--owner "$owner" \
+--repository "$repository")
 
 if [ $? -ne 0 ]; then
-    echo "::error::Failed to create the release draft
+    echo "::error::Failed to create the release draft"
     exit 1
 fi
 
