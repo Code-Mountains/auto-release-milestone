@@ -1,6 +1,12 @@
 #!/bin/bash
 set -u 
 
+# Check if repo_token is provided
+if [ -z "${1-}" ]; then
+    echo "::error::No repository token provided"
+    exit 1
+fi
+
 repo_token=$1
 
 if [ "$GITHUB_EVENT_NAME" != "milestone" ]; then
