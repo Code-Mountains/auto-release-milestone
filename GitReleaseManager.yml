@@ -1,4 +1,1 @@
-create:
-  includeContributors: true
-  contributorsHeading: "Thank you to the following contributors:"
-  contributorsFooter: "For full details of what's included in this release, see the detailed release notes."
+create: {}
