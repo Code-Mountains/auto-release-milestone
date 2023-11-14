@@ -9,6 +9,7 @@ if [ -z "$repo_token" ]; then
     exit 1
 fi
 
+
 if [ "$GITHUB_EVENT_NAME" != "milestone" ]; then
     echo "::debug::The event name was '$GITHUB_EVENT_NAME'"
     exit 0

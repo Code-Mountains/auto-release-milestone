@@ -1,0 +1,15 @@
+includeFooter: true
+footerHeading: "What's Included in this Release:"
+footerContent: "Details of what's included in milestone {milestone}"
+footerIncludesMilestone: true
+issueLabelsExclude:
+  - internal
+  - wontfix
+create:
+  includeContributors: true
+  contributorsHeading: "Thank you to the following contributors:"
+  contributorsFooter: "For full details of what's included in this release, see the detailed release notes."
+export:
+  includeContributors: true
+  contributorsHeading: "Contributors:"
+  contributorsFooter: "Thanks to everyone who contributed to this release!"
