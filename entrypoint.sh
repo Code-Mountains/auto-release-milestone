@@ -2,8 +2,7 @@
 set -u 
 
 # Use the REPO_TOKEN environment variable
-repo_token="${REPO_TOKEN}"
-
+repo_token="${REPO_TOKEN:-}"
 
 if [ -z "$repo_token" ]; then
     echo "::error::No repository token provided"

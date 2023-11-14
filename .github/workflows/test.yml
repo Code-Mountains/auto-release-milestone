@@ -18,9 +18,9 @@ jobs:
 
       - name: Create a release draft for a milestone 
         id: create-release-draft
+        env:
+          REPO_TOKEN: ${{ secrets.CM_GITHUB_TOKEN }}
         uses: ./
-        with:
-          repo-token: ${{ secrets.CM_GITHUB_TOKEN }}
 
       - name: Print the URL of the release draft 
         if: steps.create-release-draft.outputs.release-url != ''
