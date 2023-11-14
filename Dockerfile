@@ -8,6 +8,10 @@ LABEL repository="https://github.com/Code-Mountains/auto-release-milestone"
 LABEL maintainer="Code Mountains IT Solutions"
 
 RUN apt-get update && apt-get install -y jq
+RUN dotnet tool install -g GitReleaseManager.Tool 
+
+ENV PATH /root/.dotnet/tools:$PATH
 
 COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
+
